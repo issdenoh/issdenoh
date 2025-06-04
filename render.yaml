@@ -1,0 +1,15 @@
+
+services:
+  - type: worker
+    name: unlock-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python unlock_bot.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHANNEL_USERNAME
+        sync: false
+      - key: MPESA_NUMBER
+        sync: false
